@@ -1,36 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Users, ShieldCheck, TrendingUp, Globe, Check } from 'lucide-react';
-import Button from '../components/ui/Button';
 import './About.css'; // custom CSS
 
-import Avinash from '../images/teamMembers/AVINASH.jpeg';
-import Anushka from '../images/teamMembers/ANUSHKA.jpeg';
-import Bhumika from '../images/teamMembers/BHUMIKA.jpeg';
-import Mehul from '../images/teamMembers/MEHUL.jpeg';
-import Shourya from '../images/teamMembers/SHOURYA.jpeg';
-import Shikhar from '../images/teamMembers/SHIKHAR.jpeg';
-import Shreyansh from '../images/teamMembers/SHREYANSH.jpeg';
-import Shreya from '../images/teamMembers/SHREYA.jpeg';
-import Rohit from '../images/teamMembers/ROHIT.jpeg';
-import Kuber from '../images/teamMembers/KUBER.jpeg';
-
 function About() {
-  const teamMembers = [
-    { name: 'Anushka Pankhuri', role: 'Team Lead', bio: '', image: Anushka },
-    { name: 'Shreya Das', role: '', bio: '', image: Shreya },
-    { name: 'Bhumika Mistri', role: '', bio: '', image: Bhumika },
-    { name: 'Shourya Bhale', role: '', bio: '', image: Shourya },
-    { name: 'Mehul Dewangan', role: '', bio: '', image: Mehul },
-    { name: 'Shikhar Agarwal', role: '', bio: '', image: Shikhar },
-    { name: 'Shreyansh Jain', role: '', bio: '', image: Shreyansh },
-    { name: 'Avinash Singh', role: '', bio: '', image: Avinash },
-    { name: 'Rohit Kumar Singh', role: '', bio: '', image: Rohit },
-    { name: 'Kuber Khandare', role: '', bio: '', image: Kuber },
-  ];
-
   return (
     <div className="about-page">
+      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-overlay" />
         <img
@@ -46,6 +21,7 @@ function About() {
         </div>
       </section>
 
+      {/* Mission Section */}
       <section className="mission-section">
         <div className="mission-container">
           <div className="mission-text">
@@ -71,7 +47,10 @@ function About() {
             </ul>
           </div>
           <div className="mission-image">
-            <img src="https://images.pexels.com/photos/1143673/pexels-photo-1143673.jpeg" alt="Farmer" />
+            <img
+              src="https://images.pexels.com/photos/1143673/pexels-photo-1143673.jpeg"
+              alt="Farmer"
+            />
             <div className="stats-box">
               <Users size={24} />
               <div>
@@ -83,6 +62,7 @@ function About() {
         </div>
       </section>
 
+      {/* Core Values Section */}
       <section className="values-section">
         <div className="section-header">
           <h2>Our Core Values</h2>
@@ -90,6 +70,7 @@ function About() {
             These principles guide everything we do at AgroTech, from product development to customer support.
           </p>
         </div>
+
         <div className="values-grid">
           {[
             {
@@ -136,29 +117,7 @@ function About() {
         </div>
       </section>
 
-      <section className="team-section">
-        <div className="section-header">
-          <h2>Meet Our Team</h2>
-          <p>
-            Our diverse team combines expertise in agriculture, technology, and business to create innovative solutions.
-          </p>
-        </div>
-        <div className="team-grid">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-card">
-              <div className="team-image">
-                <img src={member.image} alt={member.name} />
-              </div>
-              <div className="team-info">
-                <h3>{member.name}</h3>
-                <p className="role">{member.role}</p>
-                <p className="bio">{member.bio}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      {/* Call To Action */}
       <section className="cta-section">
         <h2>Join the Agricultural Revolution</h2>
         <p>
