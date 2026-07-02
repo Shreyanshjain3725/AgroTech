@@ -1,118 +1,110 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './Navbar.css';
 
 const Navbar = () => {
-    const { user, logout } = useAuth();
-    const navigate = useNavigate();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-        logout();
-        navigate('/');
-    };
+  const handleLogout = () => {
+    setMenuOpen(false);
+    logout();
+    navigate('/');
+  };
 
-    if (!user) return null;
+  if (!user) return null;
 
-    const styles = {
-        navbar: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            backgroundColor: '#ffffff',
-            padding: '0.75rem 2rem',
-            borderBottom: '1px solid #e0e0e0',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 1000,
-        },
-        logo: {
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '1.6rem',
-            fontWeight: 'bold',
-            color: '#2e7d32',
-            textDecoration: 'none',
-        },
-        logoIcon: {
-            backgroundColor: '#4CAF50',
-            color: '#fff',
-            padding: '0.5rem',
-            borderRadius: '8px',
-            marginRight: '0.5rem',
-            fontSize: '1rem',
-        },
-        navLinks: {
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1.5rem',
-        },
-        link: {
-            color: '#424242',
-            textDecoration: 'none',
-            fontWeight: '500',
-            fontSize: '0.95rem',
-            position: 'relative',
-        },
-        linkHover: {
-            transition: 'color 0.3s',
-        },
-        button: {
-            backgroundColor: '#4CAF50',
-            color: '#fff',
-            border: 'none',
-            padding: '0.5rem 1.2rem',
-            borderRadius: '20px',
-            fontWeight: '600',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s',
-        },
-        avatar: {
-            backgroundColor: '#81C784',
-            color: 'white',
-            borderRadius: '50%',
-            width: '32px',
-            height: '32px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            marginLeft: '1rem',
-        }
-    };
+  const purchaseRoute = user.role === 'MIDDLEMAN' ? '/purchase/middleman' : '/purchase';
+  const transactionRoute = user.role === 'MIDDLEMAN' ? '/transactions/middleman' : '/transactions';
+  const accountRoute = user.role === 'MIDDLEMAN' ? '/account/middleman' : '/account/farmer';
+  const dashboardRoute = user.role === 'MIDDLEMAN' ? '/middleman' : '/farmer';
 
-    const purchaseRoute = user.role === 'MIDDLEMAN' ? '/purchase/middleman' : '/purchase';
-    const transactionRoute = user.role === 'MIDDLEMAN' ? '/transactions/middleman' : '/transactions';
-    let dashboardRoute = '/';
-    if (user.role === 'MIDDLEMAN') dashboardRoute = '/middleman';
-    if (user.role === 'FARMER') dashboardRoute = '/farmer';
+  const linkProps = {
+    onClick: () => setMenuOpen(false),
+  };
 
+  return (
+    <nav className="app-navbar-outer" aria-label="Main">
+      <div className="app-navbar">
+      <Link to="/home" className="app-navbar-logo">
+        <span className="app-navbar-logo-mark" aria-hidden>
+          🌱
+        </span>
+        AgroTech
+      </Link>
 
-    const userInitials = user.username
-        .split(' ')
-        .map(word => word[0].toUpperCase())
-        .join('');
+      <div className="app-navbar-wrap">
+        <button
+          type="button"
+          className="app-navbar-toggle"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="main-nav-menu"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-    return (
-        <nav style={styles.navbar}>
-            <Link to="/home" style={styles.logo}>
-                <span style={styles.logoIcon}>🌱</span>
-                AgroTech
+        <ul id="main-nav-menu" className={`app-navbar-links${menuOpen ? ' is-open' : ''}`}>
+          <li>
+            <Link to="/agri-tools" {...linkProps}>
+              Agri Tools
             </Link>
-            <div style={styles.navLinks}>
-
-                <Link to="/market-data" style={styles.link}>Market Data</Link>
-                <Link to="/demographics" style={styles.link}>Demographics</Link>
-                <Link to="/about" style={styles.link}>About Us</Link>
-                <Link to="/contact" style={styles.link}>Contact</Link>
-                <Link to={purchaseRoute} style={styles.link}>Purchase Requests</Link>
-                <Link to={transactionRoute} style={styles.link}>Transactions</Link>
-                <Link to={dashboardRoute} style={styles.link}>Dashboard</Link>
-                <Link to="/profile" style={styles.link}>Profile</Link>
-                <button onClick={handleLogout} style={styles.button}>Sign Out</button>
-            </div>
-        </nav>
-    );
+          </li>
+          <li>
+            <Link to="/market-data" {...linkProps}>
+              Market Data
+            </Link>
+          </li>
+          <li>
+            <Link to="/demographics" {...linkProps}>
+              Demographics
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" {...linkProps}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" {...linkProps}>
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to={purchaseRoute} {...linkProps}>
+              Purchase Requests
+            </Link>
+          </li>
+          <li>
+            <Link to={transactionRoute} {...linkProps}>
+              Transactions
+            </Link>
+          </li>
+          <li>
+            <Link to={dashboardRoute} {...linkProps}>
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link to={accountRoute} {...linkProps}>
+              Account
+            </Link>
+          </li>
+          <li>
+            <button type="button" className="nav-link-btn app-navbar-signout" onClick={handleLogout}>
+              Sign out
+            </button>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/src/app.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "agrotech-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/src/app.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "agrotech-frontend/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "agrotech-frontend/$1"
+    }
+  ]
+}

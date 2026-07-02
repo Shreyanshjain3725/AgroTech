@@ -1,50 +1,136 @@
-                         🌾 AgroTech – The Coding Crew 🌾
-🚜 Empowering Farmers Through Fair Trade 🚜
-AgroTech is a web platform designed to connect farmers directly with middlemen to enable transparent, fair, and localized crop pricing.
-By eliminating unnecessary intermediaries, AgroTech ensures that both farmers and buyers can negotiate, interact, and transact seamlessly, fostering better profits and trust-based trade relationships. 🤝
+# 🌿 AgroTech — Connecting Farmers and Middlemen
 
+AgroTech is a modern, full-stack digital marketplace designed to bridge the gap between agricultural producers (**Farmers**) and distributors (**Middlemen**). By providing real-time demand comparisons, region-specific price trends, and direct purchase channels, the platform empowers farmers to optimally price their crops and negotiate fair deals, eliminating excessive intermediary layers.
 
-🚀 Features
+---
 
-✔️ 👤 User Authentication – Secure registration and login for farmers and middlemen.
+## 📸 Application Screenshot Tour
 
-✔️ 🌾 Crop Listing – Farmers can upload and list crops with detailed information.
+Below are live screenshots captured directly from the running AgroTech application, showcasing the interfaces for both Farmer and Middleman workflows.
 
-✔️ 💬 Direct Interaction – Middlemen can view, contact, and negotiate directly.
+### 1. Farmer Dashboard
+The main client interface where farmers are greeted with a customized action hub, showing real-time market opportunities, demand trends, and pricing highlights to optimize sales.
+![Farmer Dashboard](Dashboard.png)
 
-✔️ 🖼️ Profile Photo Upload – Personalized user profiles with image support.
+### 2. Demographics & Market Visualization
+An interactive graphing and analytics dashboard allowing users to visualize regional distributions of crop demand, seasonal yields, and market pricing histories.
+![Demographics](Demographics.png)
 
-✔️ 🔐 Secure Backend – REST APIs powered by Spring Boot for reliable operations.
+### 3. Purchase Request Center
+Middlemen can submit crop Purchase Requests specify requirements, quantities, and price offers, which are then broadcasted to eligible farmers.
+![Purchase Request Sheet](Purchase_Request.png)
 
-✔️ ⚡ Responsive Frontend – Clean, mobile-friendly UI built with React.js.
+### 4. User Profile & Preferences
+Both Farmers and Middlemen can manage their business profiles, upload credentials, specify crop lists, set preferred market regions, and link contact channels.
+![User Profile](Profile_Page.png)
 
+### 5. Brand Identity & Footer
+Clean branding and layout with responsive navigation and integrated footer systems.
+![Brand Footer](Footer.png)
 
+---
 
+## 🚀 Key Features
 
-🛠️ Tech Stack
+*   **Dual Portal Authentication**: Separate registration and specialized UI flows for **Farmers** (sellers) and **Middlemen** (buyers).
+*   **Simple Authentication**: Secured via robust Basic Authentication matching hashed database credentials.
+*   **Market Request Hub**: Middlemen publish purchase requests. Farmers review listing requirements and fulfill them.
+*   **Demographic Visualizers**: Interactive charts documenting crop production shares, regional demands, and price curves.
+*   **AgriSmart Tools**: Utility widgets for helping farmers plan optimal crop yields based on climate and market conditions.
+*   **Self-Contained Dev Database**: Embedded In-Memory MongoDB Runner allows developers to run, test, and seed the project without installing local database binaries.
 
-🎨 Frontend -> 	React.js
+---
 
-🚀 Backend -> Spring Boot (Java)
+## 🛠️ Tech Stack
 
-🗄️ Database -> 	MySQL
+### Frontend
+- **Framework**: React 19 (React-Router-DOM v7)
+- **Styling**: TailwindCSS v4, Bootstrap v5 (Vanilla CSS components)
+- **Charts / Graphics**: Chart.js, React-Chartjs-2
+- **Network Client**: Axios
+- **Design Icons**: Lucide React
 
-🛠️ Build Tools ->	Maven, npm
+### Backend
+- **Server Framework**: Node.js & Express
+- **Database driver**: Mongoose (MongoDB)
+- **Security**: Bcrypt.js (Password Hashing)
+- **Utility Tools**: Nodemon, Dotenv, Multer
 
-🔐 Authentication -> 	Spring Security
+---
 
+## 📂 Project Directory Structure
 
-📸 UI Screens
+```text
+resume_agrotech/
+├── agrotech-frontend/    # React frontend client application
+│   ├── src/             # Application source files (pages, components, context, etc.)
+│   └── package.json     # Client-side configuration and scripts
+├── server/               # Express & Node.js backend server
+│   ├── src/             # Backend server routes, models, middleware, and entrypoints
+│   ├── run-db.js        # Helper script to launch In-Memory MongoDB server
+│   └── package.json     # Server-side configuration and script actions
+└── backend/              # Alternate Java Spring Boot backend folder
+```
 
-![image](./Demographics.png)
+---
 
-![image](./Profile_Page.png)
+## ⚙️ Quick Start Installation & Setup
 
-![image](./Dashboard.png)
+Follow these steps to launch the entire stack on your local workspace.
 
-![image](./Footer.png)
+### Core Requirements
+- **Node.js** v18+ 
+- **NPM** v9+
 
-![image](./Purchase_Request.png)
+---
 
+### Step 1: Start the In-Memory MongoDB Server
+To make startup completely zero-configuration, we have packaged an in-memory database server. Developers do not need to install MongoDB globally on their machines.
 
+1. Open a new terminal.
+2. Navigate to the `server` directory and install the database server dependencies:
+   ```bash
+   cd server
+   npm install
+   ```
+3. Run the in-memory database:
+   ```bash
+   npm run db
+   ```
+   *The database will start listening on port `27017` in the background.*
 
+---
+
+### Step 2: Launch the Backend Express API
+1. Open a second terminal.
+2. Navigate to the `server` directory.
+3. Start the Node.js backend:
+   ```bash
+   cd server
+   npm start
+   ```
+   *The API will start listening and connect to the database at `http://localhost:5000`.*
+
+---
+
+### Step 3: Launch the React Client App
+1. Open a third terminal.
+2. Navigate to the `agrotech-frontend` directory.
+3. Install the client-side packages:
+   ```bash
+   cd agrotech-frontend
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+   *Your default web browser should open automatically displaying the application at `http://localhost:3000`.*
+
+---
+
+## 👤 Verification Credentials
+You can register new Farmers/Middlemen directly in the registration pages, or use our pre-configured test account for immediate access:
+*   **Role**: Farmer
+*   **Username**: `farmer1`
+*   **Password**: `Password123`

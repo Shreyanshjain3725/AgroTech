@@ -1,0 +1,305 @@
+.agri-tools {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3.5rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  color: var(--color-text, #1f2937);
+}
+
+.agri-tools-hero {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 35%, #e0f2fe 100%);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-lg, 20px);
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.agri-tools-hero-inner h1 {
+  margin: 0.35rem 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  color: var(--color-primary-dark, #14532d);
+  font-family: var(--font-display, Georgia, serif);
+}
+
+.agri-tools-hero-inner p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.55;
+  max-width: 52rem;
+}
+
+.agri-tools-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #166534;
+  background: #dcfce7;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.agri-tools-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.agri-tools-tabs button {
+  flex: 1;
+  max-width: 200px;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  color: #374151;
+}
+
+.agri-tools-tabs button.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+.agri-tools-panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.agri-tools-search label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.agri-tools-search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.agri-tools-search-row input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.agri-tools-search-row button {
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #16a34a;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.agri-tools-search-row button.secondary {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.agri-tools-search-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.agri-tools-error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.agri-tools-location {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.agri-tools-coords {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.agri-tools-sowing {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  background: #f0fdf4;
+  border-radius: 10px;
+  border: 1px solid #bbf7d0;
+}
+
+.agri-tools-sowing h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: #14532d;
+}
+
+.agri-tools-sowing p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.agri-tools-muted {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.agri-tools-insights {
+  margin-top: 1.5rem;
+}
+
+.agri-tools-insights h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.agri-tools-insights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.agri-tools-insights li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.agri-tools-insights .icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.agri-tools-insights strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #111827;
+}
+
+.agri-tools-insights p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.45;
+}
+
+.agri-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.agri-tools-day {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  background: #fafafa;
+}
+
+.agri-tools-day .day-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+
+.agri-tools-day .day-code {
+  font-size: 0.72rem;
+  color: #6b7280;
+  min-height: 2.2em;
+  line-height: 1.2;
+}
+
+.agri-tools-day .day-temps {
+  font-weight: 700;
+  color: #166534;
+  font-size: 0.9rem;
+  margin: 0.35rem 0;
+}
+
+.agri-tools-day .day-rain {
+  font-size: 0.75rem;
+  color: #2563eb;
+}
+
+.agri-tools-intro {
+  margin: 0 0 1rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.agri-tools-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.agri-tools-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.agri-tools-form input {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.agri-tools-result {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  max-width: 420px;
+}
+
+.agri-tools-result .result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #d1fae5;
+}
+
+.agri-tools-result .result-row:last-child {
+  border-bottom: none;
+}
+
+.agri-tools-result .result-row.highlight {
+  font-size: 1.05rem;
+  padding-top: 0.5rem;
+}
+
+.agri-tools-result .result-row.highlight strong {
+  color: #15803d;
+}

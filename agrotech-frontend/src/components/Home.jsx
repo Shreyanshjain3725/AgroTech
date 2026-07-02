@@ -1,6 +1,7 @@
 import React from 'react';
-import './Home.css'; 
-import FarmerImage from "../images/farmer.jpg"
+import { Link } from 'react-router-dom';
+import './Home.css';
+import FarmerImage from '../images/farmer.jpg';
 
 function Home() {
   return (
@@ -13,9 +14,20 @@ function Home() {
           <span className="highlight">Farmers & Middlemen</span>
         </h1>
         <p className="subtitle">
-          AgroTech revolutionizes agricultural trading with secure transactions, real-time market data, and direct
-          connections between producers and buyers.
+          AgroTech revolutionizes agricultural trading with secure accounts, real-time market context, purchase requests,
+          and direct connections between producers and buyers.
         </p>
+        <div className="hero-actions">
+          <Link to="/login" className="btn btn-primary">
+            Sign in
+          </Link>
+          <Link to="/register/farmer" className="btn btn-outline">
+            Join as Farmer
+          </Link>
+          <Link to="/register/middleman" className="btn btn-ghost">
+            Join as Middleman
+          </Link>
+        </div>
       </section>
 
       <section className="features">
@@ -42,6 +54,21 @@ function Home() {
             <h3>Community</h3>
             <p>Join thousands of farmers and middlemen nationwide</p>
           </div>
+        </div>
+      </section>
+
+      <section className="smart-tools-teaser">
+        <div className="smart-tools-inner">
+          <div className="smart-tools-copy">
+            <h2>Agri Smart Tools</h2>
+            <p>
+              Check live weather with field-friendly tips and run a quick profit-margin estimate before you list a
+              crop—no extra signup required.
+            </p>
+          </div>
+          <Link to="/agri-tools" className="btn btn-primary smart-tools-btn">
+            Open Agri Tools
+          </Link>
         </div>
       </section>
 
@@ -100,8 +127,11 @@ function Home() {
       </section>
 
       <section className="cta">
-        <h2>Ready to Transform Your Agricultural Business?</h2>
-        <p>Join thousands of farmers and middlemen already using AgroTech</p>
+        <h2>Ready to transform your agricultural business?</h2>
+        <p>Create an account, post purchase requests, and connect with partners across the value chain.</p>
+        <Link to="/login" className="btn-light">
+          Get started
+        </Link>
       </section>
     </div>
   );

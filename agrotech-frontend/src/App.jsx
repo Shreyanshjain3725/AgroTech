@@ -21,6 +21,12 @@ import Contact from './pages/Contact.jsx';
 import Footer from './components/navigation/Footer.jsx';
 import Demographics from './pages/Demographics.jsx';
 import NotFound from './pages/NotFound.jsx';
+import FarmerAccount from './pages/FarmerAccount.jsx';
+import MiddlemanAccount from './pages/MiddlemanAccount.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import TermsOfService from './pages/TermsOfService.jsx';
+import FAQ from './pages/FAQ.jsx';
+import AgriSmartTools from './pages/AgriSmartTools.jsx';
 
 
 function App() {
@@ -34,6 +40,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<FrontPage />} />
                     <Route path="/login" element={<LoginForm />} />
+                    <Route path="/login/farmer" element={<LoginForm defaultRole="FARMER" lockRole />} />
+                    <Route path="/login/middleman" element={<LoginForm defaultRole="MIDDLEMAN" lockRole />} />
                     <Route path="/register/farmer" element={<FarmerRegisterForm />} />
                     <Route path="/register/middleman" element={<MiddlemanRegisterForm />} />
                     <Route
@@ -52,6 +60,22 @@ function App() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route
+                        path="/account/farmer"
+                        element={
+                            <ProtectedRoute role="FARMER">
+                                <FarmerAccount />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/account/middleman"
+                        element={
+                            <ProtectedRoute role="MIDDLEMAN">
+                                <MiddlemanAccount />
+                            </ProtectedRoute>
+                        }
+                    />
                     <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                     <Route path="/purchase" element={<ProtectedRoute><PurchaseRequestForm /></ProtectedRoute>} />
                     <Route path="/purchase/middleman" element={<ProtectedRoute><MiddlemanRequestsPage /></ProtectedRoute>} />
@@ -62,6 +86,10 @@ function App() {
                     <Route path="/about" element={<About/>} />
                     <Route path="/demographics" element={<Demographics/>} />
                     <Route path="/contact" element={<Contact/>} />
+                    <Route path="/privacy" element={<PrivacyPolicy />} />
+                    <Route path="/terms" element={<TermsOfService />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/agri-tools" element={<AgriSmartTools />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 </main>

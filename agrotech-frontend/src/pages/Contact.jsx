@@ -1,32 +1,9 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import TextInput from '../components/forms/TextInput';
-import TextareaInput from '../components/forms/TextareaInput';
-import SelectInput from '../components/forms/SelectInput';
-import Button from '../components/ui/Button';
-import './Contact.css'; 
+import './Contact.css';
+import { faqItems } from '../data/faqContent';
 
 function Contact() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting }
-  } = useForm();
-
-  const onSubmit = async (data) => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Your message has been sent. We'll get back to you soon!");
-      reset();
-    } catch (error) {
-      toast.error('Failed to send message. Please try again.');
-      console.error('Contact form error:', error);
-    }
-  };
-
   return (
     <div className="page-transition">
       <section className="contact-hero">
@@ -48,7 +25,11 @@ function Contact() {
                 <MapPin size={24} className="icon-primary" />
               </div>
               <h3>Our Location</h3>
-              <p>IIIT Lucknow<br />Ahmamau, Lucknow</p>
+              <p>
+                IIIT Lucknow
+                <br />
+                Ahmamau, Lucknow
+              </p>
             </div>
 
             <div className="info-box">
@@ -56,7 +37,13 @@ function Contact() {
                 <Phone size={24} className="icon-primary" />
               </div>
               <h3>Phone Number</h3>
-              <p>General: 987654321<br />Support: 987654321<br />Sales: 987654321</p>
+              <p>
+                General: 8266069764
+                <br />
+                Support: 8808055888
+                <br />
+                Sales: 8266069764
+              </p>
             </div>
 
             <div className="info-box">
@@ -64,7 +51,13 @@ function Contact() {
                 <Mail size={24} className="icon-primary" />
               </div>
               <h3>Email Address</h3>
-              <p>General: info@agrotech.com<br />Support: support@agrotech.com<br />Sales: sales@agrotech.com</p>
+              <p>
+                General: shreyanshjain938@gmail.com
+                <br />
+                Support: imanveshachauhan@gmail.com
+                <br />
+                Sales: shreyanshjain938@gmail.com
+              </p>
             </div>
 
             <div className="info-box">
@@ -72,12 +65,16 @@ function Contact() {
                 <Clock size={24} className="icon-primary" />
               </div>
               <h3>Working Hours</h3>
-              <p>Mon - Fri: 8AM - 8PM<br />Saturday: 9AM - 5PM<br />Sunday: Closed</p>
+              <p>
+                Mon - Fri: 8AM - 8PM
+                <br />
+                Saturday: 9AM - 5PM
+                <br />
+                Sunday: Closed
+              </p>
             </div>
           </div>
         </div>
-
-
       </section>
 
       <section className="faq-section">
@@ -88,32 +85,12 @@ function Contact() {
           </div>
 
           <div className="faq-list">
-            {[
-              {
-                q: 'How do I get started with AgroTech?',
-                a: `Getting started is easy! Simply create an account, select your role (farmer or middleman), 
-                  complete your profile, and you'll be ready to list crops or browse available products.`
-              },
-              {
-                q: 'How are transactions secured on the platform?',
-                a: `We use an escrow system. Payments are held until the buyer confirms receipt and satisfaction.`
-              },
-              {
-                q: 'What fees does AgroTech charge?',
-                a: `We charge a 2% fee on completed trades. No listing or membership fees.`
-              },
-              {
-                q: 'How does the logistics and delivery system work?',
-                a: `We work with logistics partners to offer delivery or pickup options. Everything is tracked.`
-              },
-              {
-                q: "What if there's a dispute with my transaction?",
-                a: `We have a structured dispute resolution process with investigation and support.`
-              }
-            ].map((item, i) => (
+            {faqItems.map((item, i) => (
               <details className="faq-item" key={i}>
                 <summary>{item.q}</summary>
-                <div><p>{item.a}</p></div>
+                <div>
+                  <p>{item.a}</p>
+                </div>
               </details>
             ))}
           </div>

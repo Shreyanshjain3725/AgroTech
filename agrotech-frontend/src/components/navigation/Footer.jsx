@@ -51,6 +51,11 @@ function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link to="/agri-tools" className="footer-link-item">
+                  Agri Smart Tools
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -88,11 +93,17 @@ function Footer() {
               </li>
               <li className="contact-item">
                 <Phone size={20} className="contact-icon" />
-                <span className="contact-text">6969696969</span>
+                <span className="contact-text">
+                  8266069764<br />
+                  8808055888
+                </span>
               </li>
               <li className="contact-item">
                 <Mail size={20} className="contact-icon" />
-                <span className="contact-text">info@agrotech.com</span>
+                <span className="contact-text">
+                  shreyanshjain938@gmail.com<br />
+                  imanveshachauhan@gmail.com
+                </span>
               </li>
             </ul>
           </div>

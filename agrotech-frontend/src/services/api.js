@@ -2,8 +2,10 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useMemo } from 'react';
 
+const API_BASE = process.env.REACT_APP_API_URL || '';
+
 const api = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: API_BASE,
 });
 
 export const useApi = () => {
@@ -11,7 +13,7 @@ export const useApi = () => {
 
     const apiInstance = useMemo(() => {
         const instance = axios.create({
-            baseURL: 'http://localhost:8080',
+            baseURL: API_BASE,
         });
 
         instance.interceptors.request.use(config => {

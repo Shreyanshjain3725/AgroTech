@@ -38,14 +38,15 @@ function FarmerRegisterForm() {
     };
 
     return (
-        <div className="form-wrapper">
-            <div className="logo-header">
-                <span className="logo-icon">🌿</span>
-                <h1 className="logo-text">AgroTech</h1>
-            </div>
-            <h2 className="form-title">Farmer Registration</h2>
-            <p className="form-subtitle">Join the agricultural revolution today</p>
-            <form className="register-form" onSubmit={handleSubmit}>
+        <div className="auth-page auth-page--register">
+            <div className="form-wrapper">
+                <div className="logo-header">
+                    <span className="logo-icon">🌿</span>
+                    <h1 className="logo-text">AgroTech</h1>
+                </div>
+                <h2 className="form-title">Farmer Registration</h2>
+                <p className="form-subtitle">Join the agricultural revolution today</p>
+                <form className="register-form" onSubmit={handleSubmit}>
                 {[
                     ['username', 'Username'],
                     ['email', 'Email'],
@@ -71,8 +72,9 @@ function FarmerRegisterForm() {
                         />
                     </div>
                 ))}
-                <button type="submit" className="submit-btn">Register</button>
-            </form>
+                    <button type="submit" className="submit-btn">Register</button>
+                </form>
+            </div>
         </div>
     );
 }
