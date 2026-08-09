@@ -1,6 +1,6 @@
 # 🌿 AgroTech — Connecting Farmers and Middlemen
 
-**Live Demo**: [https://agrotech.vercel.app](https://agrotech.vercel.app)
+**Live Demo**: [https://resumeagrotech.vercel.app](https://resumeagrotech.vercel.app)
 **GitHub Repository**: [https://github.com/Shreyanshjain3725/AgroTech](https://github.com/Shreyanshjain3725/AgroTech)
 AgroTech is a modern, full-stack digital marketplace designed to bridge the gap between agricultural producers (**Farmers**) and distributors (**Middlemen**). By providing real-time demand comparisons, region-specific price trends, and direct purchase channels, the platform empowers farmers to optimally price their crops and negotiate fair deals, eliminating excessive intermediary layers.
 
