@@ -1,0 +1,18 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "^/api/(.*)$",
+      "dest": "server/src/app.js"
+    },
+    {
+      "src": "^/static/(.*)$",
+      "dest": "agrotech-frontend/static/$1"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "agrotech-frontend/$1"
+    }
+  ],
+  "crons": []
+}

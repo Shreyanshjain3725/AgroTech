@@ -28,7 +28,7 @@ function FarmerRegisterForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('api/auth/register/farmer', form);
+            await api.post('/api/auth/register/farmer', form);
             alert('Registered successfully!');
             navigate('/login');
         } catch (err) {

@@ -1,5 +1,7 @@
 # 🌿 AgroTech — Connecting Farmers and Middlemen
 
+**Live Demo**: [https://agrotech.vercel.app](https://agrotech.vercel.app)
+**GitHub Repository**: [https://github.com/Shreyanshjain3725/AgroTech](https://github.com/Shreyanshjain3725/AgroTech)
 AgroTech is a modern, full-stack digital marketplace designed to bridge the gap between agricultural producers (**Farmers**) and distributors (**Middlemen**). By providing real-time demand comparisons, region-specific price trends, and direct purchase channels, the platform empowers farmers to optimally price their crops and negotiate fair deals, eliminating excessive intermediary layers.
 
 ---
@@ -61,7 +63,7 @@ Clean branding and layout with responsive navigation and integrated footer syste
 ## 📂 Project Directory Structure
 
 ```text
-resume_agrotech/
+agrotech/
 ├── agrotech-frontend/    # React frontend client application
 │   ├── src/             # Application source files (pages, components, context, etc.)
 │   └── package.json     # Client-side configuration and scripts
@@ -134,3 +136,12 @@ You can register new Farmers/Middlemen directly in the registration pages, or us
 *   **Role**: Farmer
 *   **Username**: `farmer1`
 *   **Password**: `Password123`
+
+---
+
+## ☁️ Deploying to Vercel
+When deploying to Vercel, the in-memory MongoDB will not be available. You must connect to a cloud MongoDB provider (like MongoDB Atlas) and add the connection string to your Vercel project's Environment Variables:
+1. Go to your project settings in Vercel.
+2. Add a new Environment Variable named `MONGODB_URI`.
+3. Set the value to your MongoDB connection string (e.g., `mongodb+srv://<user>:<password>@cluster.mongodb.net/agrotech`).
+4. Redeploy your project. This is required for Login and Signup to function properly in production.

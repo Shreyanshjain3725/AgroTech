@@ -27,7 +27,7 @@ function MiddlemanRegisterForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('api/auth/register/middleman', form);
+            await api.post('/api/auth/register/middleman', form);
             alert('Registered successfully!');
             navigate('/login');
         } catch (err) {

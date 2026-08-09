@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_ku3idC3Bhic6yPOpqKQOcw6RleuS",
+  "orgId": "team_INwaomvk0LQA5fhsyvEYiRIb",
+  "projectName": "resume_agrotech",
+  "settings": {
+    "createdAt": 1783032784495,
+    "framework": null,
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
